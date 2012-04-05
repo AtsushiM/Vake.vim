@@ -1,0 +1,7 @@
+"" Vake!
+" echo 'Vakefile!'
+" HTMLMinifier -input=index.html -output=index2.html
+" CSSMinifier -input=css/screen.css -output=css/screen2.css
+
+"" growlnotify 
+" system("growlnotify -t 'Vake' -m 'Vake complete.'")
