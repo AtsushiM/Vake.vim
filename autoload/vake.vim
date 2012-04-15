@@ -61,3 +61,8 @@ function! vake#Create()
         exec 'e '.g:vake_vakefile
     endif
 endfunction
+
+function! vake#compressed(file)
+    let s:file = join(readfile(a:file), '')
+    call writefile([s:js], '../deploy/m.js')
+endfunction

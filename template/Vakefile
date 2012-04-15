@@ -1,7 +1,26 @@
 "" Vake!
-" echo 'Vakefile!'
-" HTMLMinifier -input=index.html -output=index2.html
-" CSSMinifier -input=css/screen.css -output=css/screen2.css
+
+" remove
+" call system('rm -r ../deploy/*')
+
+" minifier plugin
+" HTMLMinifier -input=index.html -output=../deploy/index.html
+" CSSMinifier -input=css/screen.css -output=../deploy/css/screen.css
+
+" file copy
+" call system('cp -f js/main.js ../deploy/m.js')
+" call system('cp -f img/img.png ../deploy/i.png')
+
+" one line
+" let s:js = join(readfile('../deploy/m.js'), '')
+" call writefile([s:js], '../deploy/m.js')
+
+" replace
+" let s:js = substitute(s:js, 'img/img.png', 'i.png', 'g')
+" call writefile([s:js], '../deploy/m.js')
+
+" unlet
+" unlet s:js
 
 "" growlnotify 
 " system("growlnotify -t 'Vake' -m 'Vake complete.'")
