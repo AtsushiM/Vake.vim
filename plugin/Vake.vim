@@ -3,6 +3,14 @@
 "VERSION:  0.9
 "LICENSE:  MIT
 
+if exists("g:loaded_vake")
+    finish
+endif
+let g:loaded_vake = 1
+
+let s:save_cpo = &cpo
+set cpo&vim
+
 let g:vake_plugindir = expand('<sfile>:p:h:h').'/'
 let g:vake_templatedir = g:vake_plugindir.'template/'
 
@@ -44,3 +52,5 @@ function! s:SetAutoCmd(files)
     endif
 endfunction
 au VimEnter * call s:SetAutoCmd(g:vake_autofile)
+
+let &cpo = s:save_cpo

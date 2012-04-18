@@ -3,6 +3,9 @@
 "VERSION:  0.9
 "LICENSE:  MIT
 
+let s:save_cpo = &cpo
+set cpo&vim
+
 function! vake#Search()
     let i = 0
     let dir = expand('%:p:h').'/'
@@ -61,3 +64,5 @@ function! vake#Create()
         exec 'e '.g:vake_vakefile
     endif
 endfunction
+
+let &cpo = s:save_cpo
