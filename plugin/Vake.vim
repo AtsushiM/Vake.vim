@@ -50,6 +50,9 @@ function! s:SetAutoCmd(files)
             exec 'au BufWritePost *.'.e.' call vake#Vake()'
         endfor
     endif
+
+    unlet file
+    unlet s:SetAutoCmd
 endfunction
 au VimEnter * call s:SetAutoCmd(g:vake_autofile)
 
