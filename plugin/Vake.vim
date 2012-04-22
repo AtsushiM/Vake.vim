@@ -52,7 +52,6 @@ function! s:SetAutoCmd(files)
     endif
 
     unlet file
-    unlet s:SetAutoCmd
 endfunction
 au VimEnter * call s:SetAutoCmd(g:vake_autofile)
 
