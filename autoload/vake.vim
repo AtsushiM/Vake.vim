@@ -7,21 +7,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 function! vake#Search()
-    let i = 0
-    let dir = expand('%:p:h').'/'
-    while i < g:vake_cdloop
-        if !filereadable(dir.g:vake_vakefile)
-            let i = i + 1
-            let dir = dir.'../'
-        else
-            break
-        endif
-    endwhile
-
-    if i != g:vake_cdloop
-        return dir
-    endif
-    return ''
+    return searchparent#File(g:vake_vakefile)
 endfunction
 
 function! vake#Vake()
