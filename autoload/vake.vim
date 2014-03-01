@@ -7,7 +7,8 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 function! vake#Search()
-    return searchparent#File(g:vake_vakefile)
+    let path = searchparent#File(g:vake_vakefile)
+    return fnamemodify(path, ':h').'/'
 endfunction
 
 function! vake#Vake()
